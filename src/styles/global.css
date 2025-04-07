@@ -1,1 +1,91 @@
 @import "tailwindcss";
+
+@layer base {
+
+	:root {
+		--blackened: #131313;
+		--charcoal: #212121;
+		--slate: #303030;
+		--ash: #646464;
+		--vivid-orange: #ff6700;
+		--rust: #421b00;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+}
+
+@layer utilities {
+
+	.bg-blackened { background-color: var(--blackened); }
+	.bg-charcoal { background-color: var(--charcoal); }
+	.bg-slate { background-color: var(--slate); }
+	.bg-ash { background-color: var(--ash); }
+	.bg-vivid-orange { background-color: var(--vivid-orange); }
+	.bg-rust { background-color: var(--rust); }
+
+	.text-blackened { color: var(--blackened); }
+	.text-charcoal { color: var(--charcoal); }
+	.text-slate { color: var(--slate); }
+	.text-ash { color: var(--ash); }
+	.text-vivid-orange { color: var(--vivid-orange); }
+	.text-rust { color: var(--rust); }
+
+	/* Button Class */
+	.btn-primary {
+		background-color: var(--blackened);
+		color: white;
+		padding: 0.75rem 1.5rem; /* padding top/bottom and left/right */
+		border-radius: 0.375rem;
+		font-weight: 600;
+		border: 2px solid #212121; /* default border color (charcoal) */
+		transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+	}
+
+	.btn-primary:hover {
+		transform: scale(1.05); /* Slight scale effect on hover */
+		border-color: var(--vivid-orange); /* border becomes vivid-orange on hover */
+	}
+
+	.btn-primary:active {
+		background-color: #cc5700; /* Even darker when clicked */
+		transform: scale(1); /* Reset scale on click */
+	}
+
+	/* Div Container Class */
+	.container-flex {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		background-color: var(--charcoal); /* Can adjust based on your theme */
+		border-radius: 8px;
+	}
+
+	.card-project {
+		background-color: var(--charcoal);
+		border: 2px solid var(--ash);
+		border-radius: 0.75rem; 
+		padding: 1.5rem;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+		transition: all 0.3s ease;
+	}
+
+	.card-project:hover {
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+		border-color: var(--vivid-orange);
+		transform: translateY(-2px);
+	}
+
+	@media (min-width: 768px) {
+		.card-project {
+			max-width: 360px;
+		}
+	}
+
+}

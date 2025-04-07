@@ -5,6 +5,13 @@ export default defineConfig({
   site: 'https://realchkris.github.io',
   base: '/',
   vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: 'assets/[name].[hash][extname]',
+        },
+      },
+    },
     plugins: [tailwindcss()],
   },
 });
